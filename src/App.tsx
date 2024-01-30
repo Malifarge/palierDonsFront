@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
+import {UserContextProvider}  from "./context/User";
 
 const App = () =>{
   return(
     <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<Login/>}/>
-      </Routes>
+      <UserContextProvider>
+        <Routes>
+          <Route path="/login" element={<Login/>}/>
+        </Routes>
+      </UserContextProvider>
     </BrowserRouter>
   )
 }

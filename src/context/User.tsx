@@ -1,11 +1,39 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import userType from "../types/User";
+import childrenType from "../types/children";
+import { me } from "../api/user";
 
 const userContext = createContext({})
 
-const userContextProvider = ({children}:any) =>{
+const UserContextProvider = ({children}:childrenType) =>{
     const [user,setUser] = useState<null | userType>(null)
     const [token,setToken] = useState<null | string>(null)
+
+    useEffect(()=>{
+        const localToken = localStorage.getItem('token')
+        if(localToken){
+            setToken(localToken)
+        }
+    },[])
+
+    useEffect(()=>{
+        if(token){
+            localStorage.setItem('token',token)
+            getUser()
+        }
+    },[token])
+
+    useEffect(()=>{
+        if(user){
+            console.log(user);
+            
+        }
+    },[user])
+
+    const getUser = async()=>{
+        const User = await me(token)
+        setUser(User)
+    }
 
     const value = {
         user,
@@ -20,6 +48,6 @@ const userContextProvider = ({children}:any) =>{
 }
 
 export {
-    userContextProvider,
+    UserContextProvider,
     userContext
   }

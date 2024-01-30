@@ -1,7 +1,7 @@
 interface InputType {
-    label: string,
+    text: string,
     type: string,
-    onChange: ()=> void
+    onChange: (e:any)=> void
 }
 
 export default InputType
