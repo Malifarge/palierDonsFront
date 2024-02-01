@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
-const InputStyle = styled.input`
-    max-width: 50%;
+export const InputStyle = styled.div`
+    width:100%;
+    display:flex;
+    justify-content: space-between;
 `
 
-export default InputStyle
+export const Form = styled.form`
+    width: 300px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    gap:10px;
+`

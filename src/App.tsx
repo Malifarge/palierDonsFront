@@ -1,14 +1,19 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import {UserContextProvider}  from "./context/User";
+import { Page } from "./styles/général";
+import Profil from "./pages/Profil";
 
 const App = () =>{
   return(
     <BrowserRouter>
       <UserContextProvider>
-        <Routes>
-          <Route path="/login" element={<Login/>}/>
-        </Routes>
+        <Page>      
+          <Routes>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/profil" element={<Profil/>}/>
+          </Routes>
+        </Page>
       </UserContextProvider>
     </BrowserRouter>
   )
