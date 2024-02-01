@@ -3,6 +3,7 @@ import Login from "./pages/login";
 import {UserContextProvider}  from "./context/User";
 import { Page } from "./styles/général";
 import Profil from "./pages/Profil";
+import Palier from "./pages/palier";
 
 const App = () =>{
   return(
@@ -10,6 +11,7 @@ const App = () =>{
       <UserContextProvider>
         <Page>      
           <Routes>
+            <Route path="/palier/:userName" element={<Palier/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/profil" element={<Profil/>}/>
           </Routes>
