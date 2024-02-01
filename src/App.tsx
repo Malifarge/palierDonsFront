@@ -11,7 +11,7 @@ const App = () =>{
       <UserContextProvider>
         <Page>      
           <Routes>
-            <Route path="/palier/:userName" element={<Palier/>}/>
+            <Route path="/palier/:id" element={<Palier/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/profil" element={<Profil/>}/>
           </Routes>
