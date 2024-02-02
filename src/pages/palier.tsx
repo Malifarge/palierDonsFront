@@ -24,7 +24,7 @@ const Palier = () =>{
         const tri1 = [] as any
         const tri2 = [] as any
         paliers.forEach((palier:paliersType)=>{
-            if(palier.id<=10){
+            if(paliers.indexOf(palier as never)<=9){
                 tri1.push(palier)
             }else{
                 tri2.push(palier)

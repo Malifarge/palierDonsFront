@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { PutPalier } from "../api/palier"
+import { DeletePalier, PutPalier } from "../api/palier"
 import { ChangeLigne, PalierLine } from "../styles/palier"
 import PalierModifProps from "../types/PalierModifProps"
 import { Input } from "./input";
@@ -32,6 +32,12 @@ const PalierModif = ({palier,refresh}:PalierModifProps) =>{
         refresh()
     }
 
+    const handleDelete = async() =>{
+        await DeletePalier(palier.id)
+        refresh()
+        
+    }
+
     return(
         <PalierLine className={`${palier.Validation ? "valider":""}`}>
             {change ?   
@@ -46,6 +52,7 @@ const PalierModif = ({palier,refresh}:PalierModifProps) =>{
                             <p className={'argent'}>{palier.Prix}€</p>
                             <p>{palier.Goal}</p>
                             <button onClick={()=>setChange(true)}>modifier</button>
+                            <button onClick={handleDelete}>Suprimer</button>
                         </> 
             }
         </PalierLine>

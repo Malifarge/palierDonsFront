@@ -1,7 +1,7 @@
 import paliersType from "../types/paliers"
 
 const getPalier = async(id:number) =>{
-    const request = await fetch(`https://palierdons-ed5087cda283.herokuapp.com/palier/user/${id}`,{
+    const request = await fetch(`${process.env.REACT_APP_API_URL}/palier/user/${id}`,{
         headers:{
             'Content-Type' : 'application/json'
         }
@@ -11,7 +11,7 @@ const getPalier = async(id:number) =>{
 }
 
 const PutPalier = async(id:number,palier:paliersType)=>{
-    const request = await fetch(`https://palierdons-ed5087cda283.herokuapp.com/palier/${id}`,{
+    const request = await fetch(`${process.env.REACT_APP_API_URL}/palier/${id}`,{
         method: "PUT",
         headers:{
             'Content-Type' : 'application/json'
@@ -22,7 +22,19 @@ const PutPalier = async(id:number,palier:paliersType)=>{
     return response
 }
 
+const DeletePalier = async(id:number)=>{
+const request = await fetch(`${process.env.REACT_APP_API_URL}/palier/${id}`,{
+    method:"DELETE",
+    headers:{
+        'Content-Type' : 'application/json'
+    }
+})
+const response = await request.json()
+return response
+}
+
 export  {
     getPalier,
-    PutPalier
+    PutPalier,
+    DeletePalier
 }
