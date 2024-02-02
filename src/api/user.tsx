@@ -24,7 +24,19 @@ const me = async(token:string|null) =>{
     return response
 }
 
+const getUserName = async(user_Id:number)=>{
+    const request = await fetch(`https://palierdons-ed5087cda283.herokuapp.com/user/${user_Id}`,{
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    })
+
+    const response = await request.json()
+    return response
+}
+
 export {
     login,
-    me
+    me,
+    getUserName
 }

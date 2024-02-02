@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useEffect, useState } from "react";
 import userType from "../types/User";
 import childrenType from "../types/children";
@@ -22,13 +23,6 @@ const UserContextProvider = ({children}:childrenType) =>{
             getUser()
         }
     },[token])
-
-    useEffect(()=>{
-        if(user){
-            console.log(user);
-            
-        }
-    },[user])
 
     const getUser = async()=>{
         const User = await me(token)
