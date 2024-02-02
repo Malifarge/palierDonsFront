@@ -32,6 +32,7 @@ export const PalierLine = styled.div`
     display:flex;
     gap:20px;
     margin-top:10px;
+    align-items:center;
     p{
         margin:0;
         font-weight: bold;
@@ -41,4 +42,23 @@ export const PalierLine = styled.div`
         text-align: right;
         width:60px;
     }
+
+    button{
+        height: 20px;
+    };
+`
+
+export const ChangeLigne =styled.form`
+    display:flex;
+    gap:5px;
+    margin-left:20px;
+
+    label{
+        margin-right: 5px;
+    };
+
+    .changePrix{
+        width:60px;
+    }
+
 `

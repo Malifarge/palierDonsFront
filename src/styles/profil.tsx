@@ -6,6 +6,7 @@ display:flex;
 align-items:center;
 justify-content:space-around;
 font-size: 13px;
+background: #FEE3D8;
 
 h1{
     margin:0;
