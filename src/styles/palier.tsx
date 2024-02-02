@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const BackgroundDonation = styled.article`
-width:100vw;
-height:100vh;
+min-width:100vw;
+min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:space-around;
-background:url("/images/Background.png") no-repeat center/100vw 100vh;
+background:url("/images/Background.png") no-repeat center/100% 100%;
 
 h1{
     margin:0;
@@ -21,6 +21,7 @@ h1{
     flex-direction:column;
     height: 60%;
     max-width:40%;
+    margin-top:5%;
 }
 .valider{
     color:#276429;
@@ -37,6 +38,14 @@ export const PalierLine = styled.div`
         margin:0;
         font-weight: bold;
         text-align: left;
+
+        @media (max-height: 720px){
+            font-size:12px;
+        }
+
+        @media (max-width: 900px){
+            font-size:10px;
+        }
     }
     .argent{
         text-align: right;

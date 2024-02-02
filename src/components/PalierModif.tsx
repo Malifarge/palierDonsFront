@@ -5,36 +5,42 @@ import PalierModifProps from "../types/PalierModifProps"
 import { Input } from "./input";
 
 const PalierModif = ({palier,refresh}:PalierModifProps) =>{
-    const [isChecked, setIsChecked] = useState<boolean>(palier.Validation);
+    const [isChecked, setIsChecked] = useState<boolean>(palier.Validation ? palier.Validation : false);
     const [change,setChange] = useState<boolean>(false)
     const [prix,setPrix] = useState<number>(palier.Prix)
     const [goal,setGoal] = useState<string>(palier.Goal)
 
     const handleCheckChange = async (e:any)=>{
-        setIsChecked(e.target.checked)
-        const newPalier = {
-            ...palier,
-            Validation:e.target.checked,
-        }
-        await PutPalier(palier.id,newPalier)
-        refresh()      
+        if(palier.id){
+            setIsChecked(e.target.checked)
+            const newPalier = {
+             ...palier,
+                Validation:e.target.checked,
+            }
+            await PutPalier(palier.id,newPalier)
+            refresh()
+        }      
     }
 
     const handleSubmit = async (e:any) =>{
         e.preventDefault()
-        const newPalier={
-            ...palier,
-            Prix:prix,
-            Goal:goal
+        if(palier.id){
+            const newPalier={
+                ...palier,
+                Prix:prix,
+                Goal:goal
+            }
+            await PutPalier(palier.id,newPalier)
+            setChange(false)
+            refresh()
         }
-        await PutPalier(palier.id,newPalier)
-        setChange(false)
-        refresh()
     }
 
     const handleDelete = async() =>{
-        await DeletePalier(palier.id)
-        refresh()
+        if(palier.id){
+            await DeletePalier(palier.id)
+            refresh()
+        }
         
     }
 

@@ -33,8 +33,21 @@ const response = await request.json()
 return response
 }
 
+const CreatePalier = async(palier:paliersType)=>{
+    const request = await fetch(`${process.env.REACT_APP_API_URL}/palier`,{
+        method:"POST",
+        headers:{
+            'Content-Type' : 'application/json'
+        },
+        body: JSON.stringify(palier)
+    })
+    const response = request.json()
+    return response
+}
+
 export  {
     getPalier,
     PutPalier,
-    DeletePalier
+    DeletePalier,
+    CreatePalier
 }
