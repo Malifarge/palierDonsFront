@@ -1,5 +1,18 @@
 import userType from "../types/User"
 
+const signup = async (user:userType) =>{
+    
+    const request = await fetch(`${process.env.REACT_APP_API_URL}/signup`,{
+        method: 'POST',
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(user)
+    })
+    const response = await request.json()
+    return response
+}
+
 const login = async(user:userType) =>{
     const request = await fetch(`${process.env.REACT_APP_API_URL}/login`,{
         method: 'POST',
@@ -36,6 +49,7 @@ const getUserName = async(user_Id:number)=>{
 }
 
 export {
+    signup,
     login,
     me,
     getUserName

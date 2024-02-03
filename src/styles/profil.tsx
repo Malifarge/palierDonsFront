@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { SecondColor } from "./color";
 
 export const BackgroundProfil = styled.article`
 width:100vw;
@@ -24,6 +25,6 @@ h1{
 }
 .valider{
     color:#276429;
-    background:#CAC5BA;
+    background:${SecondColor};
 }
 `
