@@ -29,10 +29,18 @@ const UserContextProvider = ({children}:childrenType) =>{
         setUser(User)
     }
 
+    const logout = () =>{
+        setToken(null)
+        setUser(null)
+        localStorage.removeItem('token')
+    }
+
     const value = {
         user,
-        setToken
+        setToken,
+        logout
     }
+
 
     return(
         <userContext.Provider value={value}>

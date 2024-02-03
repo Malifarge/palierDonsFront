@@ -17,7 +17,7 @@ const Profil = () =>{
     const [prix,setPrix] = useState<number | null>(null)
     const [goal,setGoal] = useState<string | null>(null)
 
-    const { user } = useContext(userContext) as any
+    const { user,logout } = useContext(userContext) as any
 
     const navigate = useNavigate()
 
@@ -65,7 +65,11 @@ const Profil = () =>{
 
     return(
         <BackgroundProfil>
-            <h1>{user?.userName}</h1>
+            <div className="head">
+                <h1>{user?.userName}</h1>
+                <button onClick={logout}>logout</button>
+                <p>{`${process.env.REACT_APP_URL}/palier/${user?.id}`}</p>
+            </div>
         <div className="contain">
             {paliers1.map((palier:paliersType)=>{
                     return <PalierModif palier={palier} refresh={getPaliers} key={palier.id}/>
