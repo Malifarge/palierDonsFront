@@ -48,9 +48,21 @@ const getUserName = async(user_Id:number)=>{
     return response
 }
 
+const getAllUsers = async() =>{
+    const request = await fetch (`${process.env.REACT_APP_API_URL}/user`,{
+        headers:{
+            'Content-Type' : 'application/json'
+        }
+    })
+
+    const response = await request.json()
+    return response
+}
+
 export {
     signup,
     login,
     me,
-    getUserName
+    getUserName,
+    getAllUsers
 }

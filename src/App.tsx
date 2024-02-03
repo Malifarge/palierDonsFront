@@ -5,6 +5,7 @@ import { Page } from "./styles/général";
 import Profil from "./pages/Profil";
 import Palier from "./pages/palier";
 import Home from "./pages/Home";
+import Stream from "./pages/Stream";
 
 const App = () =>{
   return(
@@ -16,6 +17,7 @@ const App = () =>{
             <Route path="/palier/:id" element={<Palier/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/profil" element={<Profil/>}/>
+            <Route path="/stream" element={<Stream/>}/>
           </Routes>
         </Page>
       </UserContextProvider>

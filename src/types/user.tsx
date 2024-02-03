@@ -1,6 +1,7 @@
 interface userType {
     userName:string,
-    password:string
+    password:string,
+    id?:number
 }
 
 export default userType
