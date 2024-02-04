@@ -11,6 +11,7 @@ import { Input } from "../components/input"
 
 const Profil = () =>{
     const [paliers,setPaliers] = useState<[]|[paliersType]>([])
+    const [paliersSort,setPaliersSort] = useState<[] | [paliersType]>([])
     const [paliers1,setPaliers1] = useState<[]|[paliersType]>([])
     const [paliers2,setPaliers2] = useState<[]|[paliersType]>([])
     const [ajout,setAjout] = useState<boolean>(false)
@@ -30,10 +31,18 @@ const Profil = () =>{
     },[user])
 
     useEffect(()=>{
+        
+        const newPaliers = paliers.sort((a:paliersType,b:paliersType)=>{
+            return a.Prix - b.Prix
+        })
+        setPaliersSort(newPaliers)
+    },[paliers])
+
+    useEffect(()=>{
         const tri1 = [] as any
         const tri2 = [] as any
-        paliers.forEach((palier:paliersType)=>{
-            if(paliers.indexOf(palier as never)<=paliers.length/2 -1 ){
+        paliersSort.forEach((palier:paliersType)=>{
+            if(paliers.indexOf(palier as never)<=paliers.length/2 -1){
                 tri1.push(palier)
             }else{
                 tri2.push(palier)
@@ -41,7 +50,7 @@ const Profil = () =>{
         })
         setPaliers1(tri1)
         setPaliers2(tri2)
-    },[paliers])
+    },[paliersSort])
 
     const getPaliers = async() =>{
         const allPaliers = await getPalier(user.id)

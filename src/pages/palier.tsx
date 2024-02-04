@@ -8,6 +8,7 @@ import { getUserName } from "../api/user"
 
 const Palier = () =>{
     const [paliers,setPaliers] = useState<[]|[paliersType]>([])
+    const [paliersSort,setPaliersSort] = useState<[] | [paliersType]>([])
     const [paliers1,setPaliers1] = useState<[]|[paliersType]>([])
     const [paliers2,setPaliers2] = useState<[]|[paliersType]>([])
 
@@ -19,11 +20,19 @@ const Palier = () =>{
     useEffect(()=>{
         getPaliers()
     },[])
+    
+    useEffect(()=>{
+        
+        const newPaliers = paliers.sort((a:paliersType,b:paliersType)=>{
+            return a.Prix - b.Prix
+        })
+        setPaliersSort(newPaliers)
+    },[paliers])
 
     useEffect(()=>{
         const tri1 = [] as any
         const tri2 = [] as any
-        paliers.forEach((palier:paliersType)=>{
+        paliersSort.forEach((palier:paliersType)=>{
             if(paliers.indexOf(palier as never)<=paliers.length/2 -1){
                 tri1.push(palier)
             }else{
@@ -32,7 +41,7 @@ const Palier = () =>{
         })
         setPaliers1(tri1)
         setPaliers2(tri2)
-    },[paliers])
+    },[paliersSort])
 
     const getPaliers = async() =>{
         const allPaliers = await getPalier(Number(id))
