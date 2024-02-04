@@ -25,8 +25,14 @@ const UserContextProvider = ({children}:childrenType) =>{
     },[token])
 
     const getUser = async()=>{
-        const User = await me(token)
-        setUser(User)
+        try{
+            const User = await me(token)
+            setUser(User)
+        }catch(e){
+            console.log(e);
+            setToken(null)
+            localStorage.removeItem('token')
+        }
     }
 
     const logout = () =>{
