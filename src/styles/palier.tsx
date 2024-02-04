@@ -38,6 +38,7 @@ export const PalierLine = styled.div`
         margin:0;
         font-weight: bold;
         text-align: left;
+        width:100%;
 
         @media (max-height: 720px){
             font-size:12px;
