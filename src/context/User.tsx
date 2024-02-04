@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useEffect, useState } from "react";
-import userType from "../types/User";
+import userType from "../types/user";
 import childrenType from "../types/children";
 import { me } from "../api/user";
 

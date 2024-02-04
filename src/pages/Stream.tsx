@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { getAllUsers } from "../api/user"
-import userType from "../types/User"
+import userType from "../types/user"
 import { useNavigate } from "react-router-dom"
 import { StreamsListContain } from "../styles/Stream"
 

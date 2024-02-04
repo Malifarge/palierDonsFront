@@ -1,4 +1,4 @@
-import userType from "../types/User"
+import userType from "../types/user"
 
 const signup = async (user:userType) =>{
     
