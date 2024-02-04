@@ -21,7 +21,7 @@ const Stream = () =>{
     return(
         <StreamsListContain>
         {usersList.map(user=>{
-            return <button onClick={()=>navigate(`/palier/${user.id}`)}>{user.userName}</button>
+            return <button onClick={()=>navigate(`/palier/${user.id}`)} key={user.id}>{user.userName}</button>
         })}
         </StreamsListContain>
     )
