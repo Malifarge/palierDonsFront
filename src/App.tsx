@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Login from "./pages/login";
 import {UserContextProvider}  from "./context/User";
 import { Page } from "./styles/général";
-import Profil from "./pages/Profil";
+import Profil from "./pages/profil";
 import Palier from "./pages/palier";
 import Home from "./pages/Home";
 import Stream from "./pages/Stream";
