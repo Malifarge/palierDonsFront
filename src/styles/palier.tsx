@@ -11,7 +11,7 @@ background:url("/images/Background.png") no-repeat center/100% 100%;
 h1{
     margin:0;
     font-family: 'Carattere', cursive;
-    font-size: 50px;
+    font-size: 35px;
     position:fixed;
     top:5px;
     left:5px;

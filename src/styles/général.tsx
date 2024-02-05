@@ -14,3 +14,17 @@ button{
     cursor:pointer;
 }
 `
+
+export const HeaderContainer = styled.header<{ isvisible: string; }>`
+    height:40px;
+    position:fixed;
+    top:0px;
+    left: 0;
+    width: 100%;
+    
+    div{
+        display: ${(props)=>props.isvisible};
+        background-color: ${BackgroundColor};
+        padding: 10px;
+    }
+`
