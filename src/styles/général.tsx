@@ -21,10 +21,35 @@ export const HeaderContainer = styled.header<{ isvisible: string; }>`
     top:0px;
     left: 0;
     width: 100%;
+    z-index:1000;
     
     div{
         display: ${(props)=>props.isvisible};
         background-color: ${BackgroundColor};
         padding: 10px;
+        align-items:center;
+        justify-content: space-between;
+        img{
+            width:60px;
+            height:60px;
+        }
+
+        nav{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            margin-right:10px;
+
+            button{
+                background:none;
+                border:none;
+                color:#00000050;
+                cursor:pointer;
+                text-decoration:none;
+                &:hover{
+                    color:#000000
+                }
+            }
+        }
     }
 `

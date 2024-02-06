@@ -5,7 +5,8 @@ const Home = () =>{
     const navigate = useNavigate()
     return(
         <HomeStyle>
-            <button onClick={()=>navigate('/login')}>Login</button> <button onClick={()=>navigate('/stream')}>Voir des paliers</button>
+            <button onClick={()=>navigate('/login')}>Login</button>
+            <button onClick={()=>navigate('/stream')}>Liste des streams</button>
         </HomeStyle>
     )
 }

@@ -6,14 +6,14 @@ import Profil from "./pages/profil";
 import Palier from "./pages/palier";
 import Home from "./pages/Home";
 import Stream from "./pages/Stream";
-// import Headers from "./components/header";
+import Headers from "./components/header";
 
 const App = () =>{
   return(
     <BrowserRouter>
       <UserContextProvider>
         <Page>
-          {/* <Headers/> */}
+          <Headers/>
           <Routes>
             <Route path="/" element={<Home/>}/>
             <Route path="/palier/:id" element={<Palier/>}/>
