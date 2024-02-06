@@ -1,10 +1,13 @@
 import styled from "styled-components";
+import { SecondColor } from "./color";
 
 export const StreamsListContain = styled.article`
-    display:flex;
-    justify-content: space-Around;
-    flex-wrap:wrap;
+    text-align:center;
     width: 80%;
+
+    a{
+        color: blue;
+    }
 
     button{
         width:150px;
