@@ -7,7 +7,7 @@ export const StreamsListContain = styled.article`
     width: 80%;
 
     button{
-        width:100px;
+        width:150px;
         padding:10px;
         margin: 20px;
     }
