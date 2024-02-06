@@ -20,7 +20,7 @@ const Stream = () =>{
     }
     return(
         <StreamsListContain>
-            <p>Pour voir qui est actuellement en stream : <a href="https://cdstream.fr/?page_id=33" target="_blank">ici</a> </p>
+            <p>Pour voir qui est actuellement en stream : <a rel="noreferrer" href="https://cdstream.fr/?page_id=33" target="_blank">ici</a> </p>
         {usersList.map(user=>{
             return <button onClick={()=>navigate(`/palier/${user.id}`)} key={user.id}>{user.userName}</button>
         })}
